@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/cssua.min.js"></script>
+    <script>
+        function showDetail(filename, 銘柄) {
+            $("#title").text(trainname);
+            $("#train-image").attr("src", "images/"+filename+".pdf");
+            $.mobile.changePage('#detail-page');
+        }
+        
+        function goToメイクPage() {
+            var url = "http://make-print.co.jp/";
+            window.open(url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page" id="紙価格-page">
+        <div data-role="header" data-position="fixed" class="jqm-header-custom" data-theme="c">
+            <h1>紙価格表示</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview">
+<!--            <li data-role="list-divider">【製紙会社別表示】</li>                
+                <li><a href="#" onclick="showDetail('0kei', 'Series 0')">Series 0</a></li>
+                <li><a href="#" onclick="showDetail('nippon', '日本製紙')">日本製紙</a></li>
+                <li><a href="#" onclick="showDetail('oji', '王子製紙')">王子製紙</a></li>
+                <li><a href="#" onclick="showDetail('daio', '大王製紙')">大王製紙</a></li>
+                <li><a href="#" onclick="showDetail('chuetu', '中越パルプ工業')">中越パルプ工業</a></li>
+                <li><a href="#" onclick="showDetail('mitsubishi', '三菱製紙')">三菱製紙</a></li>
+                <li><a href="#" onclick="showDetail('gojo', '五條製紙')">五條製紙</a></li>
+                <li><a href="#" onclick="showDetail('Ａ判', 'Ａ判')">Ａ判</a></li>
+                <li><a href="#" onclick="showDetail('四六判', '四六判')">四六判</a></li>
+            </ul>
+            <p id="credit">株式会社メイク <a href="#" onclick="goToメイクPage();">メイク</a></p>
+        </div>
+    
+        <div data-role="footer" data-position="fixed"> 
+            <div data-role="navbar" class="tabbar">
+                <ul>
+                    <li><a href="#紙価格-page" class="ui-btn-active ui-state-persist" data-icon="custom" id="train">紙価格</a></li>
+                    <li><a href="#情報-page" data-icon="custom" id="train">情報</a></li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+    
+    <div data-role="page" id="情報-page">
+        <div data-role="header" data-position="fixed" data-theme="c">
+            <h1>情報表示</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview">
+<!--            <li data-role="list-divider">【各種情報表示】</li>　 -->
+                <li><a href="#" onclick="showDetail('在庫情報', '在庫情報')">在庫情報</a></li>
+                <li><a href="#" onclick="showDetail('特価情報', '特価情報')">特価情報</a></li>
+                <li><a href="#" onclick="showDetail('営業連絡事項', '営業連絡事項')">営業連絡事項</a></li>
+            </ul>
+            <p id="credit">株式会社メイク <a href="#" onclick="goToメイクPage();">メイク</a></p>
+        </div>
+        
+        <div data-role="footer" data-position="fixed"> 
+            <div data-role="navbar" class="tabbar">
+                <ul>
+                    <li><a href="#紙価格-page" data-icon="custom" id="
+                    ">Tokaido</a></li>
+                    <li><a href="#情報-page" class="ui-btn-active ui-state-persist" data-icon="custom" id="train">情報</a></li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+    
+    <div data-role="page" id="detail-page">
+        <div data-role="header" data-position="fixed" data-theme="c">
+            <h1 id="title"></h1> 
+            <a href="index.html" data-icon="back" data-rel="back" class="ui-btn-left">Back</a>
+        </div>
+        
+        <div data-role="content">
+            <img src="" alt="" id="train-image">
+        </div>
+    </div>
+</body>
+</html>
